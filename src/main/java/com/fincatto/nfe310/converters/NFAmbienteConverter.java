@@ -8,12 +8,8 @@ import com.fincatto.nfe310.classes.NFAmbiente;
 public class NFAmbienteConverter implements Converter<NFAmbiente> {
 
 	@Override
-	public NFAmbiente read(InputNode node) throws Exception {
-		NFAmbiente nfAmbiente = null;
-		for (NFAmbiente nfAmbienteAux : NFAmbiente.values()) {
-			nfAmbiente = nfAmbienteAux;
-		}
-		return nfAmbiente;
+	public NFAmbiente read(InputNode node) throws Exception {	
+		return NFAmbiente.valueOfCodigo(node.getValue());
 	}
 
 	@Override
